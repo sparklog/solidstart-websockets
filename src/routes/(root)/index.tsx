@@ -9,7 +9,7 @@ export default function Sockets() {
       <WebSocketClient
         initialSocketUrl={
           import.meta.env.PROD
-            ? `wss://${import.meta.env.DENO_DEPLOYMENT_ID}.deno.dev/ws`
+            ? `wss://${Deno.env.get('DENO_DEPLOYMENT_ID')}.deno.dev/ws`
             : "ws://localhost:3000/ws"
         }
       />
